@@ -51,14 +51,14 @@
   }
   .nav {
     display:flex; align-items:center; justify-content:space-between;
-    padding: 18px 32px;
+    padding: 10px 32px;
     max-width: 1180px; margin: 0 auto;
   }
   .logo {
     display:flex; align-items:center;
   }
   .logo-img {
-    height: 30px;
+    height: 56px;
     width: auto;
     display:block;
   }
@@ -312,73 +312,68 @@
   }
   .why-card p { font-size: 0.9rem; color: var(--slate); }
 
-  /* ===== Program highlight ===== */
-  .program {
-    display:grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  /* ===== Mentorship tracks ===== */
+  .tracks-intro {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
   }
-  .program-visual {
-    background: var(--navy);
-    border-radius: 6px;
-    padding: 40px;
-    position: relative;
-    overflow: hidden;
+  .tracks-grid {
+    display:grid; grid-template-columns: 1fr 1fr; gap: 28px;
+    margin-bottom: 40px;
   }
-  .program-visual::before {
-    content:'';
-    position:absolute; inset:0;
-    background-image:
-      linear-gradient(rgba(247,245,240,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(247,245,240,0.05) 1px, transparent 1px);
-    background-size: 32px 32px;
-  }
-  .program-card {
-    position: relative;
-    background: var(--cream);
-    color: var(--navy);
+  .track-card {
+    border: 1.5px solid var(--line);
     border-radius: 6px;
     padding: 28px;
+    background: var(--cream);
   }
-  .pc-header {
-    display:flex; justify-content: space-between; align-items: center;
-    margin-bottom: 18px;
+  .track-card.featured {
+    border-color: var(--amber);
+    background: #fffefb;
+    position: relative;
+  }
+  .track-header {
+    display:flex; justify-content: space-between; align-items: baseline;
+    gap: 12px; flex-wrap: wrap;
+    margin-bottom: 12px;
     padding-bottom: 14px;
     border-bottom: 1px solid var(--line);
   }
-  .pc-title {
+  .track-header h3 {
     font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.25rem;
+    font-weight: 700;
     letter-spacing: -0.01em;
   }
-  .pc-badge {
+  .track-meta {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
-    background: var(--amber);
-    color: var(--navy-deep);
-    padding: 4px 10px;
-    border-radius: 3px;
-    font-weight: 600;
-  }
-  .pc-modules { list-style: none; display:flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
-  .pc-modules li {
-    display:flex; align-items: flex-start; gap: 12px;
-    font-size: 0.9rem;
-  }
-  .pc-mod-num {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.82rem;
     color: var(--teal);
     font-weight: 600;
-    flex-shrink: 0;
-    padding-top: 1px;
   }
-  .pc-footer {
+  .track-desc { color: var(--slate); font-size: 0.95rem; margin-bottom: 18px; }
+  .track-why {
     font-family: var(--font-mono);
-    font-size: 0.76rem;
-    color: var(--slate);
-    padding-top: 14px;
-    border-top: 1px solid var(--line);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber);
+    display:block;
+    margin-bottom: 12px;
   }
+  .track-list { list-style: none; display:flex; flex-direction: column; gap: 10px; }
+  .track-list li {
+    display:flex; gap: 10px; align-items: flex-start;
+    font-size: 0.9rem;
+  }
+  .track-list li::before {
+    content: '→';
+    color: var(--teal); font-weight: 700; flex-shrink: 0;
+  }
+  .mentorship-cta { margin-top: 8px; }
   /* ===== Book a demo ===== */
   .demo { background: #EFEBE2; }
   .demo-grid { display:grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center; }
@@ -504,20 +499,6 @@
     margin-bottom: 16px;
     font-weight: 600;
   }
-  .program-content h2 {
-    font-family: var(--font-display);
-    font-size: clamp(1.7rem, 3vw, 2.3rem);
-    font-weight: 700;
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
-  }
-  .program-content p { color: var(--slate); margin-bottom: 20px; }
-  .program-list { list-style: none; display:flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-  .program-list li { display:flex; gap: 12px; font-size: 0.95rem; align-items: flex-start; }
-  .program-list li::before {
-    content: '→';
-    color: var(--amber); font-weight: 700; flex-shrink: 0;
-  }
 
   /* ===== Contact ===== */
   .contact { background: var(--navy); color: var(--cream); }
@@ -587,7 +568,7 @@
     flex-wrap: wrap; gap: 16px;
   }
   footer .f-left { font-family: var(--font-mono); font-size: 0.8rem; color: var(--slate); display:flex; align-items:center; gap: 14px; }
-  .footer-logo { height: 22px; width: auto; opacity: 0.85; }
+  .footer-logo { height: 40px; width: auto; opacity: 1; }
   footer .f-right { display:flex; gap: 28px; font-size: 0.85rem; font-weight: 500; }
   footer .f-right a:hover { color: var(--teal); }
 
@@ -600,8 +581,7 @@
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .process-grid { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
     .why-grid { grid-template-columns: repeat(2, 1fr); }
-    .program { grid-template-columns: 1fr; gap: 36px; }
-    .program-visual { order: -1; }
+    .tracks-grid { grid-template-columns: 1fr; gap: 24px; }
     .contact .wrap { grid-template-columns: 1fr; gap: 40px; }
   }
   @media (max-width: 560px) {
@@ -639,7 +619,7 @@
     <div>
       <div class="eyebrow">Nairobi · Analytics & Digital Transformation</div>
       <h1>Turn your data into <span class="accent">decisions</span> that move you forward.</h1>
-      <p class="lead">Galois Insights helps SMEs, corporates, and universities harness data to grow sustainably — through consulting, dashboards, mentorship, and training built for the Kenyan market.</p>
+      <p class="lead">Galois Insights helps SMEs, corporates, NGOs and universities harness data to grow sustainably — through data analytics, research, consulting, and mentorship grounded in personalized coaching.</p>
       <div class="hero-cta">
         <a href="#book-demo" class="btn btn-primary">Book a free demo</a>
         <a href="#what-we-do" class="btn btn-secondary">Explore our work</a>
@@ -683,8 +663,10 @@
         <circle class="plot-point accent-pt" cx="450" cy="70" r="6" style="animation-delay:1.8s"/>
 
         <!-- annotations -->
-        <text class="plot-annot" x="255" y="180" style="opacity:0; animation: pop 0.5s ease-out forwards; animation-delay:1.3s">consulting</text>
-        <text class="plot-annot" x="345" y="118" style="opacity:0; animation: pop 0.5s ease-out forwards; animation-delay:1.6s">dashboards</text>
+        <text class="plot-annot" x="80" y="278" style="opacity:0; animation: pop 0.5s ease-out forwards; animation-delay:1.0s">data</text>
+        <text class="plot-annot" x="168" y="240" style="opacity:0; animation: pop 0.5s ease-out forwards; animation-delay:1.1s">analytics</text>
+        <text class="plot-annot" x="255" y="180" style="opacity:0; animation: pop 0.5s ease-out forwards; animation-delay:1.3s">research</text>
+        <text class="plot-annot" x="345" y="118" style="opacity:0; animation: pop 0.5s ease-out forwards; animation-delay:1.6s">consulting</text>
         <text class="plot-annot" x="370" y="62" style="opacity:0; animation: pop 0.5s ease-out forwards; animation-delay:1.9s">mentorship</text>
       </svg>
     </div>
@@ -695,7 +677,7 @@
   <div class="wrap">
     <div>
       <div class="eyebrow">Our mission</div>
-      <h2>We bridge the gap between academia and industry — combining consulting, dashboards, mentorship, and training to help organizations adopt modern tools, automate processes, and make smarter decisions.</h2>
+      <h2>We bridge the gap between academia and industry — combining data analytics, research, consulting, and mentorship to help organizations adopt modern tools, automate processes, and make smarter decisions.</h2>
     </div>
     <div class="mission-stats">
       <div class="stat">
@@ -708,11 +690,11 @@
       </div>
       <div class="stat">
         <span class="num">Universities</span>
-        <span class="label">Hands-on training through iAnalyse</span>
+        <span class="label">Hands-on training through the iAnalyse Mentorship Program</span>
       </div>
       <div class="stat">
-        <span class="num">Kenya</span>
-        <span class="label">Local expertise, locally built solutions</span>
+        <span class="num">NGOs</span>
+        <span class="label">Locally grounded expertise for development & community impact</span>
       </div>
     </div>
   </div>
@@ -744,7 +726,7 @@
       <div class="process-step">
         <span class="process-num">04</span>
         <h3>Develop</h3>
-        <p>Through iAnalyse mentorship and ongoing advisory, we keep building your team's capacity long after launch.</p>
+        <p>Through the iAnalyse Mentorship Program and ongoing advisory, we keep building your team's capacity long after launch.</p>
       </div>
     </div>
   </div>
@@ -776,7 +758,7 @@
         <div class="service-icon">
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="5" y="18" width="6" height="12" fill="#0F807A"/><rect x="15" y="10" width="6" height="20" fill="#1B2A4A"/><rect x="25" y="4" width="6" height="26" fill="#F15B04"/></svg>
         </div>
-        <h3>Dashboards & Analytics</h3>
+        <h3>Data Analytics</h3>
         <p>Tailored dashboards that give leaders real-time visibility into sales, finance, HR, and operations — so decisions happen faster.</p>
         <ul class="service-tags">
           <li>Power BI / Looker / Excel</li>
@@ -820,11 +802,11 @@
       <div class="demo-content">
         <div class="eyebrow">See it in action</div>
         <h2>Book a free demo of our services</h2>
-        <p>Pick what you'd like to see — a live dashboard walkthrough, a consulting session, or an iAnalyse curriculum preview — and we'll set up a time that works for you.</p>
+        <p>Pick what you'd like to see — a live dashboard walkthrough, a consulting session, or a preview of the iAnalyse Mentorship Program — and we'll set up a time that works for you.</p>
         <div class="demo-options">
           <label class="demo-option">
-            <input type="radio" name="demo-type" value="Dashboards & Analytics" checked>
-            <span class="demo-option-label">Dashboards & Analytics</span>
+            <input type="radio" name="demo-type" value="Data Analytics" checked>
+            <span class="demo-option-label">Data Analytics</span>
           </label>
           <label class="demo-option">
             <input type="radio" name="demo-type" value="Digital Transformation Consulting">
@@ -861,7 +843,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Why choose us</div>
-      <h2>Built for impact, grounded in Kenya</h2>
+      <h2>Built for impact, grounded in local insight</h2>
       <p>We're a lean, scalable hub — strategic leadership paired with streamlined execution, so every engagement delivers measurable results.</p>
     </div>
     <div class="why-grid">
@@ -875,7 +857,7 @@
       </div>
       <div class="why-card">
         <h3>Local expertise</h3>
-        <p>Solutions designed for Kenyan businesses and institutions — not imported models that miss the mark.</p>
+        <p>Solutions designed around the realities of the markets we serve — not imported models that miss the mark.</p>
       </div>
       <div class="why-card">
         <h3>Built to grow</h3>
@@ -888,9 +870,9 @@
 <section id="mentorship">
   <div class="wrap">
     <div class="section-head">
-      <span class="program-tag">iANALYSE MENTORSHIP PROGRAM</span>
+      <span class="program-tag">iAnalyse Mentorship Program</span>
       <h2>Seven cohorts mentored. Cohort 8 is now open.</h2>
-      <p>We bridge the gap between academia and industry — giving students and professionals the hands-on experience employers actually look for, through a structured, cohort-based program built on real data and real mentors.</p>
+      <p>The iAnalyse Mentorship Program equips professionals with the knowledge, skills, and practical experience needed to turn data into actionable decisions and drive meaningful impact in organizations. In today's digital world, organizations rely on data to make strategic decisions, optimize operations, and deliver value to customers and communities. This program bridges the gap between theory and practice — helping participants develop real-world analytics expertise, leadership capabilities, and ethical AI awareness while contributing to projects that create tangible outcomes for SMEs, NGOs, and local businesses.</p>
     </div>
 
     <div class="cohort-tracker">
@@ -910,37 +892,44 @@
       </div>
     </div>
 
-    <div class="program">
-      <div class="program-content">
-        <ul class="program-list">
-          <li>Cohort-based mentorship with experienced industry practitioners</li>
-          <li>Real-world projects across finance, sales, HR, and operations data</li>
-          <li>Tools-first training: spreadsheets, SQL, BI dashboards & automation</li>
-          <li>A clear pathway from university classrooms into industry-ready roles</li>
+    <p class="tracks-intro">Cohort 8 features two tracks, designed to match participants' experience levels and career goals:</p>
+
+    <div class="tracks-grid">
+      <div class="track-card">
+        <div class="track-header">
+          <h3>Digital Story Lab</h3>
+          <span class="track-meta">8 weeks · $300</span>
+        </div>
+        <p class="track-desc">Build foundational analytics skills, document real workflows, learn basic dashboards, ethical AI, and professional soft skills.</p>
+        <span class="track-why">Why this matters</span>
+        <ul class="track-list">
+          <li>Gain practical experience turning raw data into actionable insights</li>
+          <li>Learn the fundamentals of dashboards and KPI tracking to make data-driven decisions</li>
+          <li>Understand the ethical use of AI and automation in business contexts</li>
+          <li>Develop professional soft skills — communication, teamwork, and problem-solving — essential for career growth</li>
         </ul>
-        <div class="cta-row">
-          <a href="#contact" class="btn btn-primary">Join Cohort 8</a>
-          <a href="https://wa.me/254101133864" target="_blank" rel="noopener" class="btn btn-secondary">Chat with us on WhatsApp</a>
-        </div>
-        <p class="cta-note">Limited slots per cohort to keep mentorship hands-on. Contact us for the syllabus, schedule, and pricing.</p>
       </div>
-      <div class="program-visual">
-        <div class="program-card">
-          <div class="pc-header">
-            <span class="pc-title">Cohort 8 curriculum</span>
-            <span class="pc-badge">8 weeks</span>
-          </div>
-          <ul class="pc-modules">
-            <li><span class="pc-mod-num">01</span><span>Data fundamentals & spreadsheet mastery</span></li>
-            <li><span class="pc-mod-num">02</span><span>SQL for analysts</span></li>
-            <li><span class="pc-mod-num">03</span><span>Dashboard design & storytelling</span></li>
-            <li><span class="pc-mod-num">04</span><span>Automation & workflow tools</span></li>
-            <li><span class="pc-mod-num">05</span><span>Capstone project with mentor feedback</span></li>
-          </ul>
-          <div class="pc-footer">Hybrid · Nairobi & online · Mentor-led</div>
+      <div class="track-card featured">
+        <div class="track-header">
+          <h3>Digital Impact Lab</h3>
+          <span class="track-meta">12 weeks · $500</span>
         </div>
+        <p class="track-desc">Apply intermediate to advanced analytics, develop dashboards and AI solutions, work on real projects, and strengthen leadership and professional communication skills.</p>
+        <span class="track-why">Why this matters</span>
+        <ul class="track-list">
+          <li>Apply advanced analytics to solve real organizational challenges</li>
+          <li>Build sophisticated dashboards and leverage AI to optimize processes and decision-making</li>
+          <li>Lead projects with measurable impact, strengthening leadership and project management skills</li>
+          <li>Enhance professional communication, data storytelling, and stakeholder engagement abilities</li>
+        </ul>
       </div>
     </div>
+
+    <div class="cta-row mentorship-cta">
+      <a href="#contact" class="btn btn-primary">Join Cohort 8</a>
+      <a href="https://wa.me/254101133864" target="_blank" rel="noopener" class="btn btn-secondary">Chat with us on WhatsApp</a>
+    </div>
+    <p class="cta-note">Limited slots per cohort to keep mentorship hands-on. Contact us for the full syllabus and schedule.</p>
   </div>
 </section>
 
@@ -951,9 +940,9 @@
       <h2>Ready to turn your data into decisions?</h2>
       <p>Whether you need a dashboard, a digital transformation roadmap, or a mentorship program for your team — we'd love to hear about your goals.</p>
       <div class="contact-info">
-        <div class="ci-item"><span class="ci-label">Location</span> :Nairobi, Kenya</div>
-        <div class="ci-item"><span class="ci-label">Mobile</span> :+254 101 133 864</div>
-        <div class="ci-item"><span class="ci-label">Email</span><a href="mailto:info@galois-insights.org"> :info@galois-insights.org</a></div>
+        <div class="ci-item"><span class="ci-label">Location:</span>Nairobi, Kenya</div>
+        <div class="ci-item"><span class="ci-label">Mobile:</span>+254 101 133 864</div>
+        <div class="ci-item"><span class="ci-label">Email:</span><a href="mailto:info@galois-insights.org">info@galois-insights.org</a></div>
       </div>
       <div class="social-links">
         <span class="social-label">Follow us</span>
